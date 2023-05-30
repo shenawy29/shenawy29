@@ -1,8 +1,19 @@
 /*eslint-disable*/
 import { Html, Text, useGLTF, Wireframe } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
+import { Vector3 } from "three";
 
 export default function MainSection() {
   const { nodes } = useGLTF("/model.glb");
+  const directionalLightRef = useRef(null);
+  const vec = new Vector3();
+  useFrame(({ mouse }) => {
+    directionalLightRef.current.position.lerp(
+      vec.set(mouse.x * 10, mouse.y * 10, 1),
+      0.03
+    );
+  });
 
   return (
     <>
@@ -27,24 +38,20 @@ export default function MainSection() {
         <Html
           center
           position={[0, 0.5, 0]}
-          className="w-[17rem] h-[15rem] backdrop-invert opacity-90"
+          className="w-[17rem] h-[15rem] backdrop-invert opacity-90 pointer-events-none"
         />
-        <directionalLight position={[5, 3, 1]} />
+        <directionalLight ref={directionalLightRef} position={[5, 3, 1]} intensity={2.2} />
         <Text
           scale={0.2}
           position={[0.01, 0.65, 0]}
-          strokeWidth={0.01}
-          strokeColor="white"
-          fillOpacity={0}
+          fillOpacity={1}
         >
           SOFTWARE
         </Text>
         <Text
           scale={0.2}
           position={[0.03, 0.3, 0]}
-          strokeWidth={0.01}
-          strokeColor="white"
-          fillOpacity={0}
+          fillOpacity={1}
         >
           DEVELOPER
         </Text>

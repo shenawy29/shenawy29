@@ -1,6 +1,5 @@
-/*eslint-disable*/
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Overlay({ setButtonClickedPosition }) {
   const [time, setTime] = useState(new Date());

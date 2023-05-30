@@ -25,7 +25,7 @@ export default function WorkSection() {
               src="/TeslaClone.png"
               className={`tesla_image object-cover h-[100%] opacity-30 hover:blur-sm transition-[filter] duration-500 `}
             />
-            <h1 className="tesla_title transition-all duration-500 pointer-events-none text-white absolute opacity-0">
+            <h1 className="absolute text-white transition-all duration-500 opacity-0 pointer-events-none tesla_title">
               Tesla Clone
             </h1>
           </div>

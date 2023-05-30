@@ -1,4 +1,3 @@
-/*eslint-disable*/
 import { useFrame } from "@react-three/fiber";
 import { Vector3 } from "three";
 

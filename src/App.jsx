@@ -1,13 +1,11 @@
-/* eslint-disable */
 import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Perf } from "r3f-perf";
 import Overlay from "./components/Overlay";
 import WorkSection from "./components/WorkSection";
 import AboutSection from "./components/AboutSection";
 import MainSection from "./components/MainSection";
 import ContactSection from "./components/ContactSection";
-import { EffectComposer, Glitch, Noise } from "@react-three/postprocessing";
+import { EffectComposer, Glitch } from "@react-three/postprocessing";
 import { GlitchMode } from "postprocessing";
 import Camera from "./components/Camera";
 
@@ -20,7 +18,6 @@ export default function App() {
         <Overlay setButtonClickedPosition={setButtonClickedPosition} />
         <Canvas className={"h-screen"}>
           <Camera buttonClickedPosition={buttonClickedPosition} />
-          {/* <Perf position="bottom-left" /> */}
           <MainSection />
           <WorkSection />
           <ContactSection />

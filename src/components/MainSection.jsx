@@ -40,7 +40,7 @@ export default function MainSection() {
           position={[0, 0.5, 0]}
           className="w-[17rem] h-[15rem] backdrop-invert opacity-90 pointer-events-none"
         />
-        <directionalLight ref={directionalLightRef} position={[5, 3, 1]} intensity={2.2} />
+        <spotLight ref={directionalLightRef} position={[.5, 4, 1]} intensity={1} color='white' />
         <Text
           scale={0.2}
           position={[0.01, 0.65, 0]}

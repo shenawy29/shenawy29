@@ -10,55 +10,28 @@
   box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
-  font-family: "JetBrains Mono", sans-serif;
-  background-image: radial-gradient(#0f0f0f, #000000);
+:root {
+  background-color: #2980b9;
+  background: linear-gradient(215deg, #633b01 29.9%, #000000 80%),
+    linear-gradient(304deg, rgba(2, 1, 0, 0.8) 24.9%, #350b14 91%),
+    linear-gradient(10deg, #3d5300 19.9%, #5f5900 50%),
+    linear-gradient(145deg, #5a5100 15.9%, #464e00 40%);
+  background-repeat: no-repeat;
+  background-blend-mode: hard-light;
 }
+
 #root {
   height: 100vh;
 }
 
-.adventpro {
-  font-family: "Advent Pro", sans-serif;
-}
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-text-fill-color: green;
-  -webkit-box-shadow: 0 0 0px 1000px #0f0f0f inset;
-}
-.hover-underline {
-  display: inline-block;
-  position: relative;
-}
-.hover-underline::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #f2e100;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-.hover-underline:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-.hover-underline:focus:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-.tesla_div:hover .tesla_title{
-  opacity: 100;
+::-webkit-scrollbar-track {
+  background: #1d1d1d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffa500;
 }

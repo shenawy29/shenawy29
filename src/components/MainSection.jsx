@@ -1,45 +1,39 @@
-/*eslint-disable*/
-import { Html, Text, useGLTF, Wireframe } from "@react-three/drei";
+import { Sparkles, Text } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
-import { Vector3 } from "three";
+import { Vector3, Color } from "three";
+import { useContext } from "react";
+import { animated } from "@react-spring/three";
+import AppContext from "../context/Context";
+import Mesh from "./Mesh";
 
 export default function MainSection() {
-  const { nodes } = useGLTF("/model.glb");
-  const spotLightRef = useRef();
+  const { state } = useContext(AppContext);
+  const AnimatedText = animated(Text);
+
+  // Camera move controls
   const vec = new Vector3();
-  useFrame(({ mouse }) => {
-    spotLightRef.current.position.lerp(
-      vec.set(mouse.x * 10, mouse.y * 10, 1),
-      0.03
-    );
+  useFrame(({ mouse, camera }) => {
+    vec.set(mouse.x, mouse.y * 0.5, 3.5);
+    camera.position.lerp(vec, 0.01);
+    camera.lookAt(new Vector3());
   });
 
   return (
-    <mesh
-      geometry={nodes.meshgeometry.geometry}
-      scale={1.7}
-      position={[0.08, 0, 0]}
-    >
-      <meshStandardMaterial wireframe />
-      <Wireframe strokeOpacity={0.5} stroke={"black"} />
-      <Html
-        center
-        position={[0, 0.5, 0]}
-        className="w-[17rem] h-[15rem] backdrop-invert opacity-90 pointer-events-none"
+    <>
+      <Mesh />
+      <Sparkles
+        count={500}
+        scale={7}
+        speed={0.05}
+        color={new Color("orange")}
       />
-      <spotLight
-        ref={spotLightRef}
-        position={[0.5, 4, 1]}
-        intensity={1}
-        color="white"
-      />
-      <Text scale={0.2} position={[0.01, 0.65, 0]}>
-        SOFTWARE
-      </Text>
-      <Text scale={0.2} position={[0.03, 0.3, 0]}>
-        DEVELOPER
-      </Text>
-    </mesh>
+      <AnimatedText
+        font="/WorkSans-ExtraLight.ttf"
+        position={[0, 0, -0.5]}
+        {...state.navigateWordProps[0]}
+      >
+        navigate
+      </AnimatedText>
+    </>
   );
 }

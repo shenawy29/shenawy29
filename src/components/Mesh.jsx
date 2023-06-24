@@ -4,7 +4,7 @@ import { RGBELoader } from "three-stdlib";
 
 export default function Mesh() {
   const config = {
-    bounces: 2,
+    bounces: 1,
     aberrationStrength: 0.001,
     ior: 2.8,
     fresnel: 0.02,

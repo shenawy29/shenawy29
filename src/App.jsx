@@ -1,5 +1,4 @@
 import { Canvas, useThree } from "@react-three/fiber";
-import { Perf } from "r3f-perf";
 import MainSection from "./components/MainSection";
 import Overlay from "./components/Overlay";
 import { AppProvider } from "./context/Context.jsx";
@@ -17,7 +16,6 @@ export default function App() {
         camera={{ position: [0, 0, 3.5] }}
       >
         <MainSection />
-        {/* <Perf position="bottom-left" /> */}
       </Canvas>
     </AppProvider>
   );

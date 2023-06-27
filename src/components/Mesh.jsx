@@ -4,17 +4,17 @@ import { RGBELoader } from "three-stdlib";
 
 export default function Mesh() {
   const config = {
-    bounces: 1,
+    bounces: 2,
     aberrationStrength: 0.001,
-    ior: 2.8,
-    fresnel: 0.02,
-    color: "#343434",
+    ior: 2.75,
+    fresnel: 0.001,
+    color: "#4f2b00",
     fastChroma: true,
   };
   const { nodes } = useGLTF("/model.glb");
   const texture = useLoader(
     RGBELoader,
-    "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/moonless_golf_4k.hdr"
+    "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr"
   );
   return (
     <mesh

@@ -16,6 +16,16 @@ export function AppProvider({ children }) {
           ...state,
           navigateOptionsOpen: false,
         };
+      case "TOGGLE_TRANSISTIONS":
+        return {
+          ...state,
+          transistionsOpen: !state.transistionsOpen,
+        };
+      case "TURN_TRANSISTIONS_OFF":
+        return {
+          ...state,
+          transistionsOpen: false,
+        };
       case "TOGGLE_WORK_PAGE":
         return {
           ...state,
@@ -47,6 +57,7 @@ export function AppProvider({ children }) {
     navigateOptionsOpen: false,
     workPageOpen: false,
     aboutPageOpen: false,
+    transistionsOpen: false,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);

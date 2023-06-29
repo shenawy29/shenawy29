@@ -1,53 +1,50 @@
-import { useTransition, animated, easings } from "@react-spring/web";
+import { useTransition, animated } from "@react-spring/web";
+import { useContext } from "react";
+import AppContext from "../context/Context";
 
 export default function ContactTransistion() {
-  const data = [1];
-  const contactTransistion = useTransition(data, {
+  const { state, dispatch } = useContext(AppContext);
+  const { transistionsOpen } = state;
+
+  const contactTransistion = useTransition(transistionsOpen, {
     from: {
-      rotateY: -90,
+      strokeDashoffset: "100%",
+      strokeDasharray: "100%",
     },
     enter: {
-      rotateY: 0,
+      strokeDashoffset: "0%",
+      strokeDasharray: "20%",
     },
     leave: {
-      rotateY: -90,
+      strokeDashoffset: "100%",
+      strokeDasharray: "100%",
     },
     config: {
-      duration: 2000,
-      
+      tension: 200,
+      friction: 120,
     },
   });
 
   return contactTransistion(
-    (style, data) =>
-      data && (
+    (style, transistionsOpen) =>
+      transistionsOpen && (
         <button
           className="flex"
           onClick={() =>
-            (window.location.href = `mailto:alshenawy10203022@gmail.com`)
+            (window.location.href = "mailto:alshenawy10203022@gmail.com")
           }
         >
-          <animated.div style={style}>
-            <span>C</span>
-          </animated.div>
-          <animated.div style={style}>
-            <span>o</span>
-          </animated.div>
-          <animated.div style={style}>
-            <span>n</span>
-          </animated.div>
-          <animated.div style={style}>
-            <span>t</span>
-          </animated.div>
-          <animated.div style={style}>
-            <span>a</span>
-          </animated.div>
-          <animated.div style={style}>
-            <span>c</span>
-          </animated.div>
-          <animated.div style={style}>
-            <span>t</span>
-          </animated.div>
+          <svg width={155.95} height={64}>
+            <animated.text
+              style={style}
+              textAnchor="middle"
+              x="50%"
+              y="80%"
+              stroke="white"
+            >
+              Contact
+            </animated.text>
+          </svg>
         </button>
       )
   );

@@ -28,6 +28,7 @@ export default function Overlay() {
           }}
           onClick={() => {
             dispatch({ type: "TOGGLE_NAVIGATE_OPTIONS" });
+            dispatch({ type: "TOGGLE_TRANSISTIONS" });
             dispatch({ type: "TURN_WORK_PAGE_OFF" });
             dispatch({ type: "TURN_ABOUT_PAGE_OFF" });
           }}

@@ -1,4 +1,5 @@
 import { useSpring } from "@react-spring/three";
+import { Howl } from "howler";
 import { useReducer, createContext } from "react";
 
 const AppContext = createContext();
@@ -58,6 +59,11 @@ export function AppProvider({ children }) {
     workPageOpen: false,
     aboutPageOpen: false,
     transistionsOpen: false,
+    audio: new Howl({
+      src: ["/Wandering.mp3"],
+      html5: true,
+      loop: true,
+    }),
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);

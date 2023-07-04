@@ -1,13 +1,13 @@
-import React from "react";
+import { useContext } from "react";
 import { useTransition, useSpring, animated } from "@react-spring/web";
 import { useState } from "react";
 import { useProgress } from "@react-three/drei";
-import { useEffect } from "react";
+import AppContext from "../context/Context";
 
 export default function Loader() {
   const [isOpen, setIsOpen] = useState(true);
   const { progress } = useProgress();
-  useEffect(() => {}, []);
+  const { state, dispatch } = useContext(AppContext);
 
   const transition = useTransition(isOpen, {
     from: {
@@ -47,15 +47,14 @@ export default function Loader() {
             style={props}
             onClick={() => {
               setIsOpen(false);
+              state.audio.play();
             }}
           >
-            <span>
-              {progress !== 100 ? (
-                <span>Weighing your heart...</span>
-              ) : (
-                <span>Access Aaru</span>
-              )}
-            </span>
+            {progress !== 100 ? (
+              <span>Weighing your heart...</span>
+            ) : (
+              <span>Enter</span>
+            )}
           </animated.button>
         </animated.div>
       )

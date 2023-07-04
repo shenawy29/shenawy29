@@ -1,14 +1,16 @@
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import AppContext from "../context/Context";
 import Loader from "./Loader";
 import { animated, useSpring } from "@react-spring/web";
 import NavigateOptions from "./NavigateOptions";
+import { MdOutlineAudiotrack } from "react-icons/md";
 
 export default function Overlay() {
   const { state, dispatch } = useContext(AppContext);
   const [spring, api] = useSpring(() => ({ opacity: 0 }), []);
   const [navigateWordSpring, navigateWordAPI] = state.navigateWordProps;
+  const [volumeIconClicked, setVolumeIconClicked] = useState(false);
 
   return (
     <>
@@ -36,6 +38,24 @@ export default function Overlay() {
           <span>
             <RxHamburgerMenu color="white" size={"1.5em"} />
           </span>
+        </button>
+      </div>
+      <div className="absolute flex items-end justify-end w-full h-full p-5">
+        <button
+          className="z-20 "
+          onClick={() => {
+            setVolumeIconClicked(!volumeIconClicked);
+            if (state.audio.volume() === 1) {
+              state.audio.fade(1, 0, 1000);
+            } else {
+              state.audio.fade(0, 1, 1000);
+            }
+          }}
+        >
+          <MdOutlineAudiotrack
+            color={`${volumeIconClicked ? "gray" : "white"}`}
+            size={20}
+          />
         </button>
       </div>
       <NavigateOptions />

@@ -5,18 +5,19 @@ import { Ubuntu_Mono } from "next/font/google";
 const ubuntu = Ubuntu_Mono({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
-  title: "Mohamed El-Shenawy",
-  description: "A Personal portfolio",
+	title: "Mohamed El-Shenawy",
+	description: "A Personal portfolio",
+	icons: "/ankh.svg",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body className={ubuntu.className}>{children}</body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body className={ubuntu.className}>{children}</body>
+		</html>
+	);
 }

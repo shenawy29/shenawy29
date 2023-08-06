@@ -33,7 +33,7 @@ export default function Input({}: Props) {
 
 	const handleChange = useCallback(
 		(e: React.ChangeEvent<any>) => {
-			setValue(e.target.value);
+			setValue((e.target.value).toLowerCase());
 		},
 		[setValue]
 	);
@@ -60,6 +60,7 @@ export default function Input({}: Props) {
 				)}
 				value={value}
 				autoCorrect="off"
+				autoCapitalize="off"
 				onChange={handleChange}
 			/>
 		</form>

@@ -52,6 +52,7 @@ export default function Input({}: Props) {
 				id="input"
 				autoFocus
 				autoComplete="off"
+				spellCheck="false"
 				className={clsx(
 					"w-full h-full px-2 text-xl bg-transparent outline-none pointer-events-none",
 					commands.includes(value) || value === ""

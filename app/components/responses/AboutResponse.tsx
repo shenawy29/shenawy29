@@ -7,12 +7,8 @@ export default function AboutResponse({ response }: promptType) {
 	return (
 		response === "about" && (
 			<Response>
-				<p>This is a personal project serving as a developer portfolio.</p>
-				<p>I am an Egyptian software developer located in Port Said, Egypt.</p>
-				<p>
-					I also study Computer Science and I love learning about new languages
-					and frameworks.
-				</p>
+				<p>I am an Egyptian software developer based in Port Said, Egypt, and this project serves as my developer portfolio.</p>
+				<p>Alongside my studies in Computer Science, I have a strong passion for exploring new languages and frameworks, constantly seeking opportunities to expand my knowledge in the field.</p>
 			</Response>
 		)
 	);

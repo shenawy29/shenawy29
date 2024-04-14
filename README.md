@@ -1,9 +1,10 @@
-<center> 
+<center>
 
 I'm a Computer Science student with a strong passion for all things software. My OS of choice is Arch Linux
 <img height=20 align="center" src="https://skillicons.dev/icons?i=arch">
 and my editor is NeoVim
 <img height=20 align="center" src="https://skillicons.dev/icons?i=neovim">.
+
 </center>
 
 <br>
@@ -23,6 +24,8 @@ and my editor is NeoVim
   <img src="https://skillicons.dev/icons?i=c" height="40" alt="c logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=cpp" height="40" alt="cplusplus logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=lua" height="40" alt="c logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=bash" height="40" alt="bash logo"  />
   <img width="12" />

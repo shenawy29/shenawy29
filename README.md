@@ -1,10 +1,8 @@
 <center>
-
-I'm a Computer Science student with a strong passion for all things software. My OS of choice is Arch Linux
-<img height=20 align="center" src="https://skillicons.dev/icons?i=arch">
-and my editor is NeoVim
+I'm a CS student with a strong passion for all things software. I use NixOS
+<img height=20 align="center" src="https://skillicons.dev/icons?i=nix">
+and Neovim
 <img height=20 align="center" src="https://skillicons.dev/icons?i=neovim">.
-
 </center>
 
 <br>
